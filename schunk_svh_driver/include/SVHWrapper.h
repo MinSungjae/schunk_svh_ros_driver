@@ -44,6 +44,7 @@
 #include <schunk_svh_msgs/HomeWithChannels.h>
 #include <schunk_svh_msgs/SetAllChannelForceLimits.h>
 #include <schunk_svh_msgs/SetChannelForceLimit.h>
+#include <schunk_svh_msgs/CurrentFeedback.h>
 
 // Driver Specific things
 #include <schunk_svh_library/control/SVHFingerManager.h>
@@ -127,6 +128,9 @@ private:
 
   ros::Subscriber connect_sub;
   ros::Subscriber enable_sub;
+
+  //! Current feedback publisher MSJ
+  ros::Publisher current_pub;
 
   ros::ServiceServer m_home_service_all;
   ros::ServiceServer m_home_service_joint_names;

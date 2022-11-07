@@ -105,6 +105,8 @@ void SVHRosControlHWInterface::read(const ros::Time& time, const ros::Duration& 
 {
   m_joint_positions.resize(driver_svh::SVH_DIMENSION);
   m_joint_effort.resize(driver_svh::SVH_DIMENSION);
+  currents.data.clear(); // MSJ
+  currents.data.resize(driver_svh::SVH_DIMENSION); // MSJ
 
   if (m_svh->getFingerManager()->isConnected())
   {

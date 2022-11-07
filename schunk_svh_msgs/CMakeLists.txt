@@ -13,6 +13,7 @@ add_message_files(
   FILES
   SVHDiagnosticsFinger.msg
   SVHDiagnosticsToProtocol.msg
+  CurrentFeedback.msg
 )
 
 ## Generate services in the 'srv' folder

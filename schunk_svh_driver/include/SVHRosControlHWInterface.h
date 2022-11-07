@@ -98,6 +98,8 @@ protected:
   std::vector<double> m_joint_effort;
   std::vector<double> m_joint_position_commands;
 
+  std_msgs::Float64MultiArray currents; // MSJ
+
   bool m_is_fault;
 
   joint_limits_interface::JointLimits m_joint_limits;
