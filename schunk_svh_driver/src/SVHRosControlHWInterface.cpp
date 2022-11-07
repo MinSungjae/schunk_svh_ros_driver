@@ -105,8 +105,9 @@ void SVHRosControlHWInterface::read(const ros::Time& time, const ros::Duration& 
 {
   m_joint_positions.resize(driver_svh::SVH_DIMENSION);
   m_joint_effort.resize(driver_svh::SVH_DIMENSION);
-  currents.data.clear(); // MSJ
-  currents.data.resize(driver_svh::SVH_DIMENSION); // MSJ
+  joint_states.header.stamp = ros::Time::now();
+  joint_states.position.resize(driver_svh::SVH_DIMENSION);
+  joint_states.effort.resize(driver_svh::SVH_DIMENSION);
 
   if (m_svh->getFingerManager()->isConnected())
   {
@@ -135,7 +136,10 @@ void SVHRosControlHWInterface::read(const ros::Time& time, const ros::Duration& 
       m_joint_positions[channel] = cur_pos;
       m_joint_effort[channel]    = m_svh->getFingerManager()->convertmAtoN(
         static_cast<driver_svh::SVHChannel>(channel), cur_cur);
+      joint_states.position[channel] = cur_pos;
+      joint_states.effort[channel] = cur_cur;
     }
+    m_svh->state_pub.publish(joint_states);
 
     ROS_DEBUG_STREAM("read Position: " << m_joint_positions[0] << " " << m_joint_positions[1] << " "
                                        << m_joint_positions[2] << " " << m_joint_positions[3] << " "

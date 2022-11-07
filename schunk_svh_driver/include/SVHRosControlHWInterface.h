@@ -98,7 +98,7 @@ protected:
   std::vector<double> m_joint_effort;
   std::vector<double> m_joint_position_commands;
 
-  std_msgs::Float64MultiArray currents; // MSJ
+  sensor_msgs::JointState joint_states;
 
   bool m_is_fault;
 

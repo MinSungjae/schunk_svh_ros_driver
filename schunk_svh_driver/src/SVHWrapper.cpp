@@ -114,7 +114,7 @@ SVHWrapper::SVHWrapper(const ros::NodeHandle& nh)
   enable_sub = m_priv_nh.subscribe("enable_channel", 1, &SVHWrapper::enableChannelCallback, this);
 
   // Current feedback publisher MSJ
-  current_pub = m_priv_nh.advertise<schunk_svh_msgs::CurrentFeedback>("current", 1);
+  state_pub = m_priv_nh.advertise<sensor_msgs::JointState>("state", 1);
 
   // services
   m_home_service_all =

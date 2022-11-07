@@ -129,13 +129,14 @@ private:
   ros::Subscriber connect_sub;
   ros::Subscriber enable_sub;
 
-  //! Current feedback publisher MSJ
-  ros::Publisher current_pub;
-
   ros::ServiceServer m_home_service_all;
   ros::ServiceServer m_home_service_joint_names;
   ros::ServiceServer m_setAllForceLimits_srv;
   ros::ServiceServer m_setForceLimitById_srv;
+
+public:
+  //! Current feedback publisher MSJ
+  ros::Publisher state_pub;
 };
 
 #endif // #ifdef S5FH_WRAPPER_H_INCLUDED
