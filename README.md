@@ -20,8 +20,8 @@ or use an existing one.
 Inside the `src` folder of that ROS workspace, get the relevant ROS packages
 
 ```bash
-git clone -b main git@github.com:fzi-forschungszentrum-informatik/schunk_svh_ros_driver.git
-git clone -b main git@github.com:fzi-forschungszentrum-informatik/schunk_svh_library.git
+git clone -b main https://github.com/fzi-forschungszentrum-informatik/schunk_svh_ros_driver.git
+git clone -b main https://github.com/fzi-forschungszentrum-informatik/schunk_svh_library.git
 rosdep install --ignore-src --from-paths ./ -y -r
 ```
 
@@ -62,7 +62,10 @@ You can send trajectory goals to its action server for controlling groups of joi
 An easy access is provided with `rqt`'s joint trajectory controller plugin.
 You might need to install that first with e.g.
 ```bash
-sudo apt install ros-noetic-rqt-joint-trajectory-controller
+sudo apt install ros-$ROS_DISTRO-rqt-joint-trajectory-controller
 ```
 In a sourced terminal, call `rqt` and navigate to `Plugins` -> `Robot Tools` -> `Joint trajectory controller`.
 You can then move individual fingers with sliders.
+
+## Setup on a Raspberry Pi
+Here's a [step-by-step tutorial](doc/raspberry_pi.md) of how to setup the Schunk SVH ROS driver on a Raspberry Pi 4.
