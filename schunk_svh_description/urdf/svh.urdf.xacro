@@ -10,7 +10,7 @@
     <!-- RIGHT HAND = 1, LEFT HAND = -1 -->
     <!-- BASE_LINE LINKS -->
 
-    <joint name="${name}_base_joint" type="fixed" >
+    <joint name="${name}_base_joint" type="fixed">
       <xacro:insert_block name="origin" />
       <parent link="${parent}" />
       <child link="${name}_base_link" />
@@ -22,17 +22,17 @@
         <xacro:insert_block name="origin" />
         <geometry>
           <mesh filename="package://schunk_svh_description/meshes/base10.dae" />
-	</geometry>
+        </geometry>
       </visual>
       <collision>
         <xacro:insert_block name="origin" />
         <geometry>
           <mesh filename="package://schunk_svh_description/meshes/base10.dae" />
-	</geometry>
+        </geometry>
       </collision>
       <inertial>
-        <mass value="0.57743"/>
-        <origin xyz="0.0 -2.3e-05 0.139371"/>
+        <mass value="0.57743" />
+        <origin xyz="0.0 -2.3e-05 0.139371" />
         <inertia ixx="0.04725" ixy="-0.0" ixz="-0.0" iyy="0.04717" iyz="0.0" izz="0.07606" />
       </inertial>
     </link>
@@ -44,7 +44,7 @@
       <!-- 	</geometry> -->
       <!-- 	<material name="${name}_green" /> -->
       <!-- </visual> -->
-      <xacro:default_inertial mass="0.01"/>
+      <xacro:default_inertial mass="0.01" />
     </link>
 
     <link name="${name}_h">
@@ -55,7 +55,7 @@
       <!-- 	</geometry> -->
       <!-- 	<material name="${name}_green" /> -->
       <!-- </visual> -->
-      <xacro:default_inertial mass="0.01"/>
+      <xacro:default_inertial mass="0.01" />
     </link>
 
     <link name="${name}_d2">
@@ -66,44 +66,44 @@
       <!-- 	</geometry> -->
       <!-- 	<material name="${name}_green" /> -->
       <!-- </visual> -->
-      <xacro:default_inertial mass="0.01"/>
+      <xacro:default_inertial mass="0.01" />
     </link>
 
     <!-- LENGTH NOT FOUND IN DATASHEET! GUESSED!!! -->
     <link name="${name}_e1">
       <visual>
-	<origin rpy="0 0 0" xyz="0 0.01313 0" />
-	<geometry>
+        <origin rpy="0 0 0" xyz="0 0.01313 0" />
+        <geometry>
           <mesh scale="${side*(1)} 1 1" filename="package://schunk_svh_description/meshes/h10.dae" />
-	</geometry>
+        </geometry>
       </visual>
       <collision>
-	<origin rpy="0 0 0" xyz="0 0.01313 0" />
-	<geometry>
+        <origin rpy="0 0 0" xyz="0 0.01313 0" />
+        <geometry>
           <mesh scale="${side*(1)} 1 1" filename="package://schunk_svh_description/meshes/h10.dae" />
-	</geometry>
+        </geometry>
       </collision>
-      <xacro:default_inertial mass="0.01"/>
+      <xacro:default_inertial mass="0.01" />
     </link>
 
     <!-- LENGTH NOT FOUND IN DATASHEET! GUESSED!!! -->
     <link name="${name}_e2">
       <visual>
-	<origin xyz="${side*(-0.0007)} 0 -0.01002" />
-	<geometry>
+        <origin xyz="${side*(-0.0007)} 0 -0.01002" />
+        <geometry>
           <mesh scale="${side*(1)} 1 1" filename="package://schunk_svh_description/meshes/h11.dae" />
-	</geometry>
+        </geometry>
       </visual>
       <collision>
-	<origin xyz="${side*(-0.0007)} 0 -0.01002" />
-	<geometry>
+        <origin xyz="${side*(-0.0007)} 0 -0.01002" />
+        <geometry>
           <mesh scale="${side*(1)} 1 1" filename="package://schunk_svh_description/meshes/h11.dae" />
-	</geometry>
+        </geometry>
       </collision>
       <inertial>
-        <mass value="0.46184"/>
-        <origin xyz="0.145071 -0.037868 0.323449"/>
-        <inertia ixx="0.01908" ixy="-0.00121" ixz="-0.00011" iyy="0.01704" iyz="0.00277" izz="0.00862"/>
+        <mass value="0.46184" />
+        <origin xyz="0.145071 -0.037868 0.323449" />
+        <inertia ixx="0.01908" ixy="-0.00121" ixz="-0.00011" iyy="0.01704" iyz="0.00277" izz="0.00862" />
       </inertial>
     </link>
 
@@ -116,11 +116,10 @@
       <!-- 	</geometry> -->
       <!-- 	<material name="green" /> -->
       <!-- </visual> -->
-      <xacro:default_inertial mass="0.01"/>
+      <xacro:default_inertial mass="0.01" />
     </link>
 
-    <link name="${name}_e">
-    </link>
+    <link name="${name}_e"></link>
 
     <!-- LENGTH NOT FOUND IN DATASHEET! GUESSED, BUT POSITION CALCULATED: E4 = D-G-F!!! -->
     <link name="${name}_e4">
@@ -131,7 +130,7 @@
       <!-- 	</geometry> -->
       <!-- 	<material name="green" /> -->
       <!-- </visual> -->
-      <xacro:default_inertial mass="0.01"/>
+      <xacro:default_inertial mass="0.01" />
     </link>
 
     <!-- LENGTH NOT FOUND IN DATASHEET! GUESSED, BUT POSITION CALCULATED: E5 = D-G!!! -->
@@ -143,86 +142,86 @@
       <!-- 	</geometry> -->
       <!-- 	<material name="green" /> -->
       <!-- </visual> -->
-      <xacro:default_inertial mass="0.01"/>
+      <xacro:default_inertial mass="0.01" />
     </link>
 
 
     <!-- THUMB LINKS -->
     <link name="${name}_z">
       <visual>
-	<origin xyz="0 0 0.02442" />
-	<geometry>
+        <origin xyz="0 0 0.02442" />
+        <geometry>
           <mesh scale="1 ${side*(1)} 1" filename="package://schunk_svh_description/meshes/d10.dae" />
-	</geometry>
+        </geometry>
       </visual>
       <collision>
-	<origin xyz="0 0 0.02442" />
-	<geometry>
+        <origin xyz="0 0 0.02442" />
+        <geometry>
           <mesh scale="1 ${side*(1)} 1" filename="package://schunk_svh_description/meshes/d10.dae" />
-	</geometry>
+        </geometry>
       </collision>
       <inertial>
-        <mass value="0.0739"/>
-        <origin xyz="0.0 0.002024 0.178636"/>
-        <inertia ixx="0.00103" ixy="-0.0" ixz="-0.0" iyy="0.00165" iyz="4e-05" izz="0.00111"/>
+        <mass value="0.0739" />
+        <origin xyz="0.0 0.002024 0.178636" />
+        <inertia ixx="0.00103" ixy="-0.0" ixz="-0.0" iyy="0.00165" iyz="4e-05" izz="0.00111" />
       </inertial>
     </link>
 
     <link name="${name}_virtual_a">
-      <xacro:default_inertial mass="0.01"/>
+      <xacro:default_inertial mass="0.01" />
     </link>
 
     <link name="${name}_a">
       <visual>
-	<geometry>
+        <geometry>
           <mesh scale="1 ${side*(1)} ${side*(1)}" filename="package://schunk_svh_description/meshes/d11.dae" />
-	</geometry>
+        </geometry>
       </visual>
       <collision>
-	<geometry>
+        <geometry>
           <mesh scale="1 ${side*(1)} ${side*(1)}" filename="package://schunk_svh_description/meshes/d11.dae" />
-	</geometry>
+        </geometry>
       </collision>
       <inertial>
-        <mass value="0.41222"/>
-        <origin xyz="0.240205 0.010733 0.00019"/>
-        <inertia ixx="0.00413" ixy="0.00073" ixz="-0.0" iyy="0.01679" iyz="0.0" izz="0.01796"/>
+        <mass value="0.41222" />
+        <origin xyz="0.240205 0.010733 0.00019" />
+        <inertia ixx="0.00413" ixy="0.00073" ixz="-0.0" iyy="0.01679" iyz="0.0" izz="0.01796" />
       </inertial>
     </link>
 
     <link name="${name}_b">
       <visual>
-	<geometry>
+        <geometry>
           <mesh scale="1 ${side*(1)} ${side*(1)}" filename="package://schunk_svh_description/meshes/d12.dae" />
-	</geometry>
+        </geometry>
       </visual>
       <collision>
-	<geometry>
+        <geometry>
           <mesh scale="1 ${side*(1)} ${side*(1)}" filename="package://schunk_svh_description/meshes/d12.dae" />
-	</geometry>
+        </geometry>
       </collision>
       <inertial>
-        <mass value="0.08224"/>
-        <origin xyz="0.123157 -0.008382 -2.7e-05"/>
-        <inertia ixx="0.00089" ixy="5e-05" ixz="0.0" iyy="0.00139" iyz="0.0" izz="0.00103"/>
+        <mass value="0.08224" />
+        <origin xyz="0.123157 -0.008382 -2.7e-05" />
+        <inertia ixx="0.00089" ixy="5e-05" ixz="0.0" iyy="0.00139" iyz="0.0" izz="0.00103" />
       </inertial>
     </link>
 
     <link name="${name}_c">
       <visual>
-	<geometry>
+        <geometry>
           <mesh scale="1 ${side*(1)} ${side*(1)}" filename="package://schunk_svh_description/meshes/d13.dae" />
-	</geometry>
+        </geometry>
       </visual>
       <collision>
-	<geometry>
+        <geometry>
           <mesh scale="1 ${side*(1)} ${side*(1)}" filename="package://schunk_svh_description/meshes/d13.dae" />
-	</geometry>
+        </geometry>
       </collision>
       <inertial>
-        <mass value="0.06198"/>
-        <origin xyz="0.113729 0.01094 0.0"/>
-        <inertia ixx="0.00025" ixy="-0.0" ixz="-0.0" iyy="0.00051" iyz="0.0" izz="0.00052"/>
+        <mass value="0.06198" />
+        <origin xyz="0.113729 0.01094 0.0" />
+        <inertia ixx="0.00025" ixy="-0.0" ixz="-0.0" iyy="0.00051" iyz="0.0" izz="0.00052" />
       </inertial>
     </link>
 
@@ -230,75 +229,75 @@
     <!-- INDEX FINGER LINKS -->
     <link name="${name}_virtual_l">
       <visual>
-	<origin xyz="0 0 0.01321" />
-	<geometry>
+        <origin xyz="0 0 0.01321" />
+        <geometry>
           <mesh filename="package://schunk_svh_description/meshes/f10.dae" />
-	</geometry>
+        </geometry>
       </visual>
       <collision>
-	<origin xyz="0 0 0.01321" />
-	<geometry>
+        <origin xyz="0 0 0.01321" />
+        <geometry>
           <mesh filename="package://schunk_svh_description/meshes/f10.dae" />
-	</geometry>
+        </geometry>
       </collision>
       <inertial>
-        <mass value="0.02383"/>
-        <origin xyz="0.003634 0.000206 -0.09885"/>
-        <inertia ixx="0.00021" ixy="-0.0" ixz="-1e-05" iyy="0.00011" iyz="-0.0" izz="0.00019"/>
+        <mass value="0.02383" />
+        <origin xyz="0.003634 0.000206 -0.09885" />
+        <inertia ixx="0.00021" ixy="-0.0" ixz="-1e-05" iyy="0.00011" iyz="-0.0" izz="0.00019" />
       </inertial>
     </link>
 
     <link name="${name}_l">
       <visual>
-	<geometry>
+        <geometry>
           <mesh filename="package://schunk_svh_description/meshes/f11.dae" />
-	</geometry>
+        </geometry>
       </visual>
       <collision>
-	<geometry>
+        <geometry>
           <mesh filename="package://schunk_svh_description/meshes/f11.dae" />
-	</geometry>
+        </geometry>
       </collision>
       <inertial>
-        <mass value="0.13003"/>
-        <origin xyz="0.261673 0.003521 0.0"/>
-        <inertia ixx="0.00051" ixy="-3e-05" ixz="0.0" iyy="0.00335" iyz="-0.0" izz="0.00344"/>
+        <mass value="0.13003" />
+        <origin xyz="0.261673 0.003521 0.0" />
+        <inertia ixx="0.00051" ixy="-3e-05" ixz="0.0" iyy="0.00335" iyz="-0.0" izz="0.00344" />
       </inertial>
     </link>
 
     <link name="${name}_p">
       <visual>
-	<geometry>
+        <geometry>
           <mesh filename="package://schunk_svh_description/meshes/f12.dae" />
-	</geometry>
+        </geometry>
       </visual>
       <collision>
-	<geometry>
+        <geometry>
           <mesh filename="package://schunk_svh_description/meshes/f12.dae" />
-	</geometry>
+        </geometry>
       </collision>
       <inertial>
-        <mass value="0.03264"/>
-        <origin xyz="0.1384 -0.004609 0.0"/>
-        <inertia ixx="0.00016" ixy="-0.0" ixz="0.0" iyy="0.00031" iyz="-0.0" izz="0.00024"/>
+        <mass value="0.03264" />
+        <origin xyz="0.1384 -0.004609 0.0" />
+        <inertia ixx="0.00016" ixy="-0.0" ixz="0.0" iyy="0.00031" iyz="-0.0" izz="0.00024" />
       </inertial>
     </link>
 
     <link name="${name}_t">
       <visual>
-	<geometry>
+        <geometry>
           <mesh filename="package://schunk_svh_description/meshes/f13.dae" />
-	</geometry>
+        </geometry>
       </visual>
       <collision>
-	<geometry>
+        <geometry>
           <mesh filename="package://schunk_svh_description/meshes/f13.dae" />
-	</geometry>
+        </geometry>
       </collision>
       <inertial>
-        <mass value="0.0324"/>
-        <origin xyz="0.102924 0.000592 0.0"/>
-        <inertia ixx="9e-05" ixy="-1e-05" ixz="-0.0" iyy="0.00017" iyz="0.0" izz="0.00017"/>
+        <mass value="0.0324" />
+        <origin xyz="0.102924 0.000592 0.0" />
+        <inertia ixx="9e-05" ixy="-1e-05" ixz="-0.0" iyy="0.00017" iyz="0.0" izz="0.00017" />
       </inertial>
     </link>
 
@@ -306,75 +305,75 @@
     <!-- MIDDLE FINGER LINKS -->
     <link name="${name}_virtual_k">
       <visual>
-	<origin xyz="0 0 0.01321" />
-	<geometry>
+        <origin xyz="0 0 0.01321" />
+        <geometry>
           <mesh filename="package://schunk_svh_description/meshes/f20.dae" />
-	</geometry>
+        </geometry>
       </visual>
       <collision>
-	<origin xyz="0 0 0.01321" />
-	<geometry>
+        <origin xyz="0 0 0.01321" />
+        <geometry>
           <mesh filename="package://schunk_svh_description/meshes/f20.dae" />
-	</geometry>
+        </geometry>
       </collision>
       <inertial>
-        <mass value="0.02377"/>
-        <origin xyz="0.003357 -8e-06 -0.099643"/>
-        <inertia ixx="0.00021" ixy="-0.0" ixz="-1e-05" iyy="0.00011" iyz="0.0" izz="0.00019"/>
+        <mass value="0.02377" />
+        <origin xyz="0.003357 -8e-06 -0.099643" />
+        <inertia ixx="0.00021" ixy="-0.0" ixz="-1e-05" iyy="0.00011" iyz="0.0" izz="0.00019" />
       </inertial>
     </link>
 
     <link name="${name}_k">
       <visual>
-	<geometry>
+        <geometry>
           <mesh filename="package://schunk_svh_description/meshes/f21.dae" />
-	</geometry>
+        </geometry>
       </visual>
       <collision>
-	<geometry>
+        <geometry>
           <mesh filename="package://schunk_svh_description/meshes/f21.dae" />
-	</geometry>
+        </geometry>
       </collision>
       <inertial>
-        <mass value="0.13474"/>
-        <origin xyz="0.271122 0.00413 0.0"/>
-        <inertia ixx="0.00052" ixy="-3e-05" ixz="-0.0" iyy="0.0037" iyz="-0.0" izz="0.0038"/>
+        <mass value="0.13474" />
+        <origin xyz="0.271122 0.00413 0.0" />
+        <inertia ixx="0.00052" ixy="-3e-05" ixz="-0.0" iyy="0.0037" iyz="-0.0" izz="0.0038" />
       </inertial>
     </link>
 
     <link name="${name}_o">
       <visual>
-	<geometry>
+        <geometry>
           <mesh filename="package://schunk_svh_description/meshes/f22.dae" />
-	</geometry>
+        </geometry>
       </visual>
       <collision>
-	<geometry>
+        <geometry>
           <mesh filename="package://schunk_svh_description/meshes/f22.dae" />
-	</geometry>
+        </geometry>
       </collision>
       <inertial>
-        <mass value="0.0422"/>
-        <origin xyz="0.16683 -0.003774 0.0"/>
-        <inertia ixx="0.0002" ixy="0.0" ixz="-0.0" iyy="0.00047" iyz="0.0" izz="0.0004"/>
+        <mass value="0.0422" />
+        <origin xyz="0.16683 -0.003774 0.0" />
+        <inertia ixx="0.0002" ixy="0.0" ixz="-0.0" iyy="0.00047" iyz="0.0" izz="0.0004" />
       </inertial>
     </link>
 
     <link name="${name}_s">
       <visual>
-	<geometry>
+        <geometry>
           <mesh filename="package://schunk_svh_description/meshes/f23.dae" />
-	</geometry>
+        </geometry>
       </visual>
       <collision>
-	<geometry>
+        <geometry>
           <mesh filename="package://schunk_svh_description/meshes/f23.dae" />
-	</geometry>
+        </geometry>
       </collision>
       <inertial>
-        <mass value="0.03239"/>
-        <origin xyz="0.102794 0.00042 0.0"/>
-        <inertia ixx="9e-05" ixy="-1e-05" ixz="0.0" iyy="0.00017" iyz="0.0" izz="0.00017"/>
+        <mass value="0.03239" />
+        <origin xyz="0.102794 0.00042 0.0" />
+        <inertia ixx="9e-05" ixy="-1e-05" ixz="0.0" iyy="0.00017" iyz="0.0" izz="0.00017" />
       </inertial>
     </link>
 
@@ -382,75 +381,75 @@
     <!-- RING FINGER LINKS -->
     <link name="${name}_virtual_j">
       <visual>
-	<origin xyz="0 0 -0.01321" />
-	<geometry>
+        <origin xyz="0 0 -0.01321" />
+        <geometry>
           <mesh filename="package://schunk_svh_description/meshes/f30.dae" />
-	</geometry>
+        </geometry>
       </visual>
       <collision>
-	<origin xyz="0 0 -0.01321" />
-	<geometry>
+        <origin xyz="0 0 -0.01321" />
+        <geometry>
           <mesh filename="package://schunk_svh_description/meshes/f30.dae" />
-	</geometry>
+        </geometry>
       </collision>
       <inertial>
-        <mass value="0.02377"/>
-        <origin xyz="0.003805 0.000386 0.100079"/>
-        <inertia ixx="0.00021" ixy="0.0" ixz="1e-05" iyy="0.00011" iyz="-0.0" izz="0.00019"/>
+        <mass value="0.02377" />
+        <origin xyz="0.003805 0.000386 0.100079" />
+        <inertia ixx="0.00021" ixy="0.0" ixz="1e-05" iyy="0.00011" iyz="-0.0" izz="0.00019" />
       </inertial>
     </link>
 
     <link name="${name}_j">
       <visual>
-	<geometry>
+        <geometry>
           <mesh filename="package://schunk_svh_description/meshes/f31.dae" />
-	</geometry>
+        </geometry>
       </visual>
       <collision>
-	<geometry>
+        <geometry>
           <mesh filename="package://schunk_svh_description/meshes/f31.dae" />
-	</geometry>
+        </geometry>
       </collision>
       <inertial>
-        <mass value="0.1377"/>
-        <origin xyz="0.258283 -0.00154 0.0"/>
-        <inertia ixx="0.00055" ixy="0.00018" ixz="-0.0" iyy="0.00411" iyz="0.0" izz="0.00426"/>
+        <mass value="0.1377" />
+        <origin xyz="0.258283 -0.00154 0.0" />
+        <inertia ixx="0.00055" ixy="0.00018" ixz="-0.0" iyy="0.00411" iyz="0.0" izz="0.00426" />
       </inertial>
     </link>
 
     <link name="${name}_n">
       <visual>
-	<geometry>
+        <geometry>
           <mesh filename="package://schunk_svh_description/meshes/f32.dae" />
-	</geometry>
+        </geometry>
       </visual>
       <collision>
-	<geometry>
+        <geometry>
           <mesh filename="package://schunk_svh_description/meshes/f32.dae" />
-	</geometry>
+        </geometry>
       </collision>
       <inertial>
-        <mass value="0.04207"/>
-        <origin xyz="0.166851 -0.00362 0.0"/>
-        <inertia ixx="0.00019" ixy="0.0" ixz="-0.0" iyy="0.00047" iyz="0.0" izz="0.0004"/>
+        <mass value="0.04207" />
+        <origin xyz="0.166851 -0.00362 0.0" />
+        <inertia ixx="0.00019" ixy="0.0" ixz="-0.0" iyy="0.00047" iyz="0.0" izz="0.0004" />
       </inertial>
     </link>
 
     <link name="${name}_r">
       <visual>
-	<geometry>
+        <geometry>
           <mesh filename="package://schunk_svh_description/meshes/f33.dae" />
-	</geometry>
+        </geometry>
       </visual>
       <collision>
-	<geometry>
+        <geometry>
           <mesh filename="package://schunk_svh_description/meshes/f33.dae" />
-	</geometry>
+        </geometry>
       </collision>
       <inertial>
-        <mass value="0.03229"/>
-        <origin xyz="0.102676 0.000301 0.0"/>
-        <inertia ixx="9e-05" ixy="-1e-05" ixz="0.0" iyy="0.00017" iyz="-0.0" izz="0.00017"/>
+        <mass value="0.03229" />
+        <origin xyz="0.102676 0.000301 0.0" />
+        <inertia ixx="9e-05" ixy="-1e-05" ixz="0.0" iyy="0.00017" iyz="-0.0" izz="0.00017" />
       </inertial>
     </link>
 
@@ -458,75 +457,75 @@
     <!-- LITTLE FINGER LINKS -->
     <link name="${name}_virtual_i">
       <visual>
-	<origin xyz="0 0 -0.01321" />
-	<geometry>
+        <origin xyz="0 0 -0.01321" />
+        <geometry>
           <mesh filename="package://schunk_svh_description/meshes/f40.dae" />
-	</geometry>
+        </geometry>
       </visual>
       <collision>
-	<origin xyz="0 0 -0.01321" />
-	<geometry>
+        <origin xyz="0 0 -0.01321" />
+        <geometry>
           <mesh filename="package://schunk_svh_description/meshes/f40.dae" />
-	</geometry>
+        </geometry>
       </collision>
       <inertial>
-        <mass value="0.02377"/>
-        <origin xyz="0.003653 4.4e-05 0.100085"/>
-        <inertia ixx="0.00021" ixy="0.0" ixz="1e-05" iyy="0.00011" iyz="-0.0" izz="0.00019"/>
+        <mass value="0.02377" />
+        <origin xyz="0.003653 4.4e-05 0.100085" />
+        <inertia ixx="0.00021" ixy="0.0" ixz="1e-05" iyy="0.00011" iyz="-0.0" izz="0.00019" />
       </inertial>
     </link>
 
     <link name="${name}_i">
       <visual>
-	<geometry>
+        <geometry>
           <mesh filename="package://schunk_svh_description/meshes/f41.dae" />
-	</geometry>
+        </geometry>
       </visual>
       <collision>
-	<geometry>
+        <geometry>
           <mesh filename="package://schunk_svh_description/meshes/f41.dae" />
-	</geometry>
+        </geometry>
       </collision>
       <inertial>
-        <mass value="0.12544"/>
-        <origin xyz="0.232293 0.00622 0.0"/>
-        <inertia ixx="0.00049" ixy="6e-05" ixz="-0.0" iyy="0.00316" iyz="0.0" izz="0.00328"/>
+        <mass value="0.12544" />
+        <origin xyz="0.232293 0.00622 0.0" />
+        <inertia ixx="0.00049" ixy="6e-05" ixz="-0.0" iyy="0.00316" iyz="0.0" izz="0.00328" />
       </inertial>
     </link>
 
     <link name="${name}_m">
       <visual>
-	<geometry>
+        <geometry>
           <mesh filename="package://schunk_svh_description/meshes/f42.dae" />
-	</geometry>
+        </geometry>
       </visual>
       <collision>
-	<geometry>
+        <geometry>
           <mesh filename="package://schunk_svh_description/meshes/f42.dae" />
-	</geometry>
+        </geometry>
       </collision>
       <inertial>
-        <mass value="0.02488"/>
-        <origin xyz="0.119665 -0.009328 0.0"/>
-        <inertia ixx="0.00013" ixy="-0.0" ixz="-0.0" iyy="0.00023" iyz="0.0" izz="0.00016"/>
+        <mass value="0.02488" />
+        <origin xyz="0.119665 -0.009328 0.0" />
+        <inertia ixx="0.00013" ixy="-0.0" ixz="-0.0" iyy="0.00023" iyz="0.0" izz="0.00016" />
       </inertial>
     </link>
 
     <link name="${name}_q">
       <visual>
-	<geometry>
+        <geometry>
           <mesh filename="package://schunk_svh_description/meshes/f43.dae" />
-	</geometry>
+        </geometry>
       </visual>
       <collision>
-	<geometry>
+        <geometry>
           <mesh filename="package://schunk_svh_description/meshes/f43.dae" />
-	</geometry>
+        </geometry>
       </collision>
       <inertial>
-        <mass value="0.03234"/>
-        <origin xyz="0.102896 0.000307 0.0"/>
-        <inertia ixx="9e-05" ixy="-1e-05" ixz="-0.0" iyy="0.00017" iyz="0.0" izz="0.00017"/>
+        <mass value="0.03234" />
+        <origin xyz="0.102896 0.000307 0.0" />
+        <inertia ixx="9e-05" ixy="-1e-05" ixz="-0.0" iyy="0.00017" iyz="0.0" izz="0.00017" />
       </inertial>
     </link>
 
@@ -582,8 +581,8 @@
     </joint>
     <!-- J5 JOINTS is set to fixed temporarily due to defective DH algo -->
     <joint name="${name}_j5" type="fixed">
-      <parent link="${name}_e1"/>
-      <child link="${name}_e2"/>
+      <parent link="${name}_e1" />
+      <child link="${name}_e2" />
       <!--limit effort="1000.0" lower="0.0" upper="0.98786" velocity="1"/-->
       <origin xyz="${side*(0.01840)} 0.006 0.0375" rpy="0 0 0" />
       <!--axis xyz="0 0 ${side*(1)}"/-->

@@ -2,7 +2,7 @@
 <robot name="svh" xmlns:xacro="http://www.ros.org/wiki/xacro">
   <xacro:include filename="$(find schunk_svh_description)/urdf/svh.urdf.xacro" />
 
-  <xacro:property name="left_right" default="left_hand" />
+  <xacro:property name="left_right" default="left" />
 
   <!-- <link name="world" />
   <joint name="world_joint" type="fixed">
@@ -11,17 +11,18 @@
     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
   </joint> -->
 
-  <link name="base_link" />
-  <xacro:if value="${left_right == 'left_hand'}">
+  <xacro:if value="${left_right == 'left'}">
     <xacro:arg name="name_prefix" default="left_hand"/>
-    <xacro:svh parent="base_link" name="$(arg name_prefix)" side="-1">
+    <link name="${left_right}_base_link" />
+    <xacro:svh parent="${left_right}_base_link" name="$(arg name_prefix)" side="-1">
       <origin xyz="0 0 0" rpy="0 0 0" />
     </xacro:svh>
   </xacro:if>
 
-  <xacro:if value="${left_right == 'right_hand'}">
+  <xacro:if value="${left_right == 'right'}">
     <xacro:arg name="name_prefix" default="right_hand"/>
-    <xacro:svh parent="base_link" name="$(arg name_prefix)" side="1">
+    <link name="${left_right}_base_link" />
+    <xacro:svh parent="${left_right}_base_link" name="$(arg name_prefix)" side="1">
       <origin xyz="0 0 0" rpy="0 0 0" />
     </xacro:svh>
   </xacro:if>
