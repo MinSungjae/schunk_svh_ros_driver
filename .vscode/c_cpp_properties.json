@@ -1,0 +1,55 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/pibot/schunk_ws/devel/include/**",
+        "/home/pibot/schunk_ws/install/include/**",
+        "/home/pibot/catkin_ws/devel/include/**",
+        "/opt/ros/melodic/include/**",
+        "/home/pibot/fzi_ws/devel_isolated/fzi_icl_comm/include/**",
+        "/home/pibot/fzi_ws/devel_isolated/fzi_icl_core/include/**",
+        "/home/pibot/catkin_ws/src/pibot_aviation/aviation_master/include/**",
+        "/home/pibot/catkin_ws/src/DynamixelSDK/ros/dynamixel_sdk/include/**",
+        "/home/pibot/catkin_ws/src/dynamixel-workbench/dynamixel_workbench_controllers/include/**",
+        "/home/pibot/catkin_ws/src/dynamixel-workbench/dynamixel_workbench_operators/include/**",
+        "/home/pibot/catkin_ws/src/dynamixel-workbench/dynamixel_workbench_toolbox/include/**",
+        "/home/pibot/catkin_ws/src/flight_plan_ref_data/include/**",
+        "/home/pibot/catkin_ws/src/mindvision_gige_ros/include/**",
+        "/home/pibot/catkin_ws/src/OpenManipulator_7DOF/open_manipulator_7dof_control_gui/include/**",
+        "/home/pibot/catkin_ws/src/OpenManipulator_7DOF/open_manipulator_7dof_controller/include/**",
+        "/home/pibot/catkin_ws/src/OpenManipulator_7DOF_Controls/open_manipulator_7dof_controllers/include/**",
+        "/home/pibot/catkin_ws/src/OpenManipulator_7DOF_Controls/open_manipulator_7dof_hw/include/**",
+        "/home/pibot/catkin_ws/src/OpenManipulator_7DOF/open_manipulator_7dof_libs/include/**",
+        "/home/pibot/catkin_ws/src/OpenManipulator_7DOF/open_manipulator_7dof_teleop/include/**",
+        "/home/pibot/catkin_ws/src/open_manipulator_p/open_manipulator_p_control_gui/include/**",
+        "/home/pibot/catkin_ws/src/open_manipulator_p/open_manipulator_p_controller/include/**",
+        "/home/pibot/catkin_ws/src/open_manipulator_p_controls/open_manipulator_p_controllers/include/**",
+        "/home/pibot/catkin_ws/src/open_manipulator_p/open_manipulator_p_libs/include/**",
+        "/home/pibot/catkin_ws/src/open_manipulator_p/open_manipulator_p_teleop/include/**",
+        "/home/pibot/catkin_ws/src/p3d_data_receiver/include/**",
+        "/home/pibot/catkin_ws/src/controller/pibot_low_level_torque_controller/include/**",
+        "/home/pibot/catkin_ws/src/pibot_main/include/**",
+        "/home/pibot/catkin_ws/src/pibot_mission_interpreter/include/**",
+        "/home/pibot/catkin_ws/src/pibot_right_arm_controllers/include/**",
+        "/home/pibot/catkin_ws/src/pibot_text_position_server/include/**",
+        "/home/pibot/catkin_ws/src/pibot_upper_body_controllers/include/**",
+        "/home/pibot/catkin_ws/src/open_manipulator_dependencies/roboticsgroup_gazebo_plugins/include/**",
+        "/home/pibot/catkin_ws/src/robotis_manipulator/include/**",
+        "/home/pibot/catkin_ws/src/schunk_svh_controller/include/**",
+        "/home/pibot/schunk_ws/src/schunk_svh_ros_driver/schunk_svh_driver/include/**",
+        "/home/pibot/catkin_ws/src/connect_to_sim/udp_com/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

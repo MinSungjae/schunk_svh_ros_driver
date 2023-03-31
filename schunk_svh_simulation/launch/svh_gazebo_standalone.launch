@@ -18,6 +18,6 @@
 
   <!-- Load and start the controllers for the SVH  -->
   <node name="spawner" pkg="controller_manager" type="spawner" respawn="false"
-    output="screen" args="joint_state_controller left_hand_controller" />
+    output="screen" args="joint_state_controller right_hand_controller" />
 
 </launch>
