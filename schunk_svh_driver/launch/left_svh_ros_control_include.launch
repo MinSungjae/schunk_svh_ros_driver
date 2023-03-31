@@ -1,0 +1,36 @@
+<launch>
+      <group ns="left_hand">
+            <!-- global PARAMS Change here if needed -->
+            <arg name="name_prefix" default="left_hand" /> <!-- left_hand or left_hand-->
+            <arg name="gui" default="False"/>
+            <arg name="autostart" default="True"/>
+            <arg name="serial_device" default="/dev/tty_left_svh"/>
+            <arg name="maximal_force" default="0.9" />
+            <arg name="trajectory_controller_name" default="$(arg name_prefix)_controller" />
+            <arg name="debug" default="False" />
+            <!-- <param name="tf_prefix" value="left_svh"/> -->
+
+            <!-- Robot description for State publishers -->
+            <param name="robot_description" command="$(find xacro)/xacro $(find schunk_svh_description)/urdf/svh-standalone_include.urdf.xacro name_prefix:='$(arg name_prefix)' side:='-1'" />
+
+            <node if="$(arg gui)" name="rviz" pkg="rviz" type="rviz" args="-d $(find schunk_svh_driver)/etc/urdf.rviz" />
+            <!-- Hardware interface -->
+            <include file="$(find schunk_svh_driver)/launch/svh_ros_control_hw_interface.launch">
+                  <arg name="serial_device" value="$(arg serial_device)" />
+                  <arg name="maximal_force" value="$(arg maximal_force)" />
+                  <arg name="autostart" value="$(arg autostart)"/>
+                  <arg name="debug" value="$(arg debug)"/>
+                  <arg name="name_prefix" value="$(arg name_prefix)"/>
+            </include>
+
+            <!-- ROS_Control Controllers -->
+            <include ns="svh_ros_control_node" file="$(find schunk_svh_driver)/launch/svh_ros_control_controllers.launch">
+                  <arg name="trajectory_controller_name" value="$(arg trajectory_controller_name)" />
+                  <arg name="name_prefix" value="$(arg name_prefix)"/>
+            </include>
+
+            <!-- Robot state publisher for the TFs -->
+            <node name="svh_robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
+            </node>
+      </group>
+</launch>

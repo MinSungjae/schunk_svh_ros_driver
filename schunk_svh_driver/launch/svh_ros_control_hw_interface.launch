@@ -24,7 +24,7 @@
     <param name="autostart" value="$(arg autostart)" />
     <param name="name_prefix" value="$(arg name_prefix)" />
     <param name="maximal_force" value="$(arg maximal_force)" />
-    <remap from="~joint_states" to="/joint_states" />
+    <remap from="~joint_states" to="joint_states" />
   </node>
 
 </launch>

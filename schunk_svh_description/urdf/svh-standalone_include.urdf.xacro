@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<robot name="svh" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find schunk_svh_description)/urdf/svh.urdf.xacro" />
+
+  <xacro:arg name="name_prefix" default="right_hand"/>
+  <xacro:arg name="side" default="1" />
+
+  <!-- <xacro:if value="${$(arg name_prefix) == 'right_hand'}">
+    <xacro:arg name="side" value="1"/>
+  <xacro:if/>
+
+  <xacro:if value="${$(arg name_prefix) == 'left_hand'}">
+    <xacro:arg name="side" value="-1"/>
+  <xacro:if/> -->
+
+  <!-- <link name="world" />
+  <joint name="world_joint" type="fixed">
+    <parent link="world" />
+    <child link="base_link" />
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+  </joint> -->
+
+  <link name="$(arg name_prefix)_link" />
+  <xacro:svh parent="$(arg name_prefix)_link" name="$(arg name_prefix)" side="$(arg side)">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </xacro:svh>
+</robot>
