@@ -618,7 +618,7 @@
       <parent link="${name}_a" />
       <child link="${name}_b" />
       <limit effort="1000.0" lower="0.0" upper="0.98506" velocity="1" />
-      <origin xyz="0.0485 0 0" rpy="0 0 0" />
+      <origin xyz="0.0485 0 0" rpy="0 0 ${side*(0.2)}" />
       <axis xyz="0 0 ${side*(1)}" />
       <mimic joint="${name}_Thumb_Flexion" multiplier="1.01511" offset="0" />
     </joint>
@@ -637,7 +637,7 @@
       <parent link="${name}_l" />
       <child link="${name}_p" />
       <limit effort="1000.0" lower="0" upper="1.334" velocity="1" />
-      <origin xyz="0.04804 0 0" rpy="0 0 0" />
+      <origin xyz="0.04804 0 0" rpy="0 0 0.25" />
       <axis xyz="0 0 1" />
     </joint>
 
@@ -645,7 +645,7 @@
       <parent link="${name}_virtual_l" />
       <child link="${name}_l" />
       <limit effort="1000.0" lower="0.0" upper="0.79849" velocity="1" />
-      <origin xyz="0 0 0" rpy="-1.5707 0 0" />
+      <origin xyz="0 0 0" rpy="-1.5707 0 0.0" />
       <axis xyz="0 0 1" />
     </joint>
 
@@ -664,7 +664,7 @@
       <parent link="${name}_virtual_k" />
       <child link="${name}_k" />
       <limit effort="1000.0" lower="0.0" upper="0.79849" velocity="1" />
-      <origin xyz="0 0 0" rpy="-1.5707 0 0" />
+      <origin xyz="0 0 0" rpy="-1.5707 0 0.0" />
       <axis xyz="0 0 1" />
     </joint>
 
@@ -672,7 +672,7 @@
       <parent link="${name}_k" />
       <child link="${name}_o" />
       <limit effort="1000.0" lower="0" upper="1.334" velocity="1" />
-      <origin xyz="0.05004 0 0" rpy="0 0 0" />
+      <origin xyz="0.05004 0 0" rpy="0 0 0.25" />
       <axis xyz="0 0 1" />
     </joint>
 
@@ -680,7 +680,7 @@
       <parent link="${name}_o" />
       <child link="${name}_s" />
       <limit effort="1000.0" lower="0" upper="1.334" velocity="1" />
-      <origin xyz="0.032 0 0" rpy="0 0 0" />
+      <origin xyz="0.032 0 0" rpy="0 0 0.25" />
       <axis xyz="0 0 1" />
       <mimic joint="${name}_Middle_Finger_Distal" multiplier="1.0454" offset="0" />
     </joint>
@@ -698,7 +698,7 @@
       <parent link="${name}_j" />
       <child link="${name}_n" />
       <limit effort="1000.0" lower="0" upper="1.334" velocity="1" />
-      <origin xyz="0.05004 0 0" rpy="0 0 0" />
+      <origin xyz="0.05004 0 0" rpy="0 0 0.3" />
       <axis xyz="0 0 1" />
       <mimic joint="${name}_Ring_Finger" multiplier="1.3588" offset="0" />
     </joint>
@@ -707,7 +707,7 @@
       <parent link="${name}_n" />
       <child link="${name}_r" />
       <limit effort="1000.0" lower="0" upper="1.395" velocity="1" />
-      <origin xyz="0.032 0 0" rpy="0 0 0" />
+      <origin xyz="0.032 0 0" rpy="0 0 0.3" />
       <axis xyz="0 0 1" />
       <mimic joint="${name}_Ring_Finger" multiplier="1.42093" offset="0" />
     </joint>
@@ -725,7 +725,7 @@
       <parent link="${name}_i" />
       <child link="${name}_m" />
       <limit effort="1000.0" lower="0" upper="1.334" velocity="1" />
-      <origin xyz="0.04454 0 0" rpy="0 0 0" />
+      <origin xyz="0.04454 0 0" rpy="0 0 0.3" />
       <axis xyz="0 0 1" />
       <mimic joint="${name}_Pinky" multiplier="1.35880" offset="0" />
     </joint>
@@ -734,7 +734,7 @@
       <parent link="${name}_m" />
       <child link="${name}_q" />
       <limit effort="1000.0" lower="0" upper="1.3971" velocity="1" />
-      <origin xyz="0.022 0 0" rpy="0 0 0" />
+      <origin xyz="0.022 0 0" rpy="0 0 0.3" />
       <axis xyz="0 0 1" />
       <mimic joint="${name}_Pinky" multiplier="1.42307" offset="0" />
     </joint>

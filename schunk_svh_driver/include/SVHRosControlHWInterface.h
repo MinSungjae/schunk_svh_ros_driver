@@ -82,6 +82,8 @@ public:
 
 protected:
   ros::NodeHandle m_node_handle;
+
+  ros::Publisher state_pub;
   //! Handle to the SVH finger manager for library access
   std::shared_ptr<SVHWrapper> m_svh;
 
@@ -98,7 +100,7 @@ protected:
   std::vector<double> m_joint_effort;
   std::vector<double> m_joint_position_commands;
 
-  sensor_msgs::JointState joint_states;
+  // sensor_msgs::JointState joint_states;
 
   bool m_is_fault;
 

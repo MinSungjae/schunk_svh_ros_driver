@@ -136,7 +136,7 @@ private:
 
 public:
   //! Current feedback publisher MSJ
-  ros::Publisher state_pub;
+  // ros::Publisher state_pub;
 };
 
 #endif // #ifdef S5FH_WRAPPER_H_INCLUDED

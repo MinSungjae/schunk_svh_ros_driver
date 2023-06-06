@@ -46,7 +46,12 @@ PLUGINLIB_EXPORT_CLASS(SVHRosControlHWInterface, hardware_interface::RobotHW)
 
 using namespace hardware_interface;
 
-SVHRosControlHWInterface::SVHRosControlHWInterface() {}
+SVHRosControlHWInterface::SVHRosControlHWInterface() {
+
+  // Current feedback publisher MSJ
+  state_pub = m_node_handle.advertise<sensor_msgs::JointState>("state", 1);
+
+}
 
 SVHRosControlHWInterface::~SVHRosControlHWInterface() {}
 
@@ -105,7 +110,9 @@ void SVHRosControlHWInterface::read(const ros::Time& time, const ros::Duration& 
 {
   m_joint_positions.resize(driver_svh::SVH_DIMENSION);
   m_joint_effort.resize(driver_svh::SVH_DIMENSION);
+  sensor_msgs::JointState joint_states;
   joint_states.header.stamp = ros::Time::now();
+  joint_states.name.resize(driver_svh::SVH_DIMENSION);
   joint_states.position.resize(driver_svh::SVH_DIMENSION);
   joint_states.effort.resize(driver_svh::SVH_DIMENSION);
 
@@ -136,10 +143,11 @@ void SVHRosControlHWInterface::read(const ros::Time& time, const ros::Duration& 
       m_joint_positions[channel] = cur_pos;
       m_joint_effort[channel]    = m_svh->getFingerManager()->convertmAtoN(
         static_cast<driver_svh::SVHChannel>(channel), cur_cur);
+      joint_states.name[channel] = m_channel_names[channel];
       joint_states.position[channel] = cur_pos;
       joint_states.effort[channel] = cur_cur;
     }
-    m_svh->state_pub.publish(joint_states);
+    state_pub.publish(joint_states);
 
     ROS_DEBUG_STREAM("read Position: " << m_joint_positions[0] << " " << m_joint_positions[1] << " "
                                        << m_joint_positions[2] << " " << m_joint_positions[3] << " "
