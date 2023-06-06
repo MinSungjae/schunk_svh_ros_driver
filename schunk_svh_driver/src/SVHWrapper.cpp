@@ -113,9 +113,6 @@ SVHWrapper::SVHWrapper(const ros::NodeHandle& nh)
   // Subscribe enable channel topic (Int8)
   enable_sub = m_priv_nh.subscribe("enable_channel", 1, &SVHWrapper::enableChannelCallback, this);
 
-  // Current feedback publisher MSJ
-  state_pub = m_priv_nh.advertise<sensor_msgs::JointState>("state", 1);
-
   // services
   m_home_service_all =
     m_priv_nh.advertiseService("home_reset_offset_all", &SVHWrapper::homeAllNodes, this);
